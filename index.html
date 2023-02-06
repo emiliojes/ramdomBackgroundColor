@@ -29,17 +29,22 @@
         <h2>
             the recent background-color is: <span class="color">Red</span>
             <button class="change">Change the background-color</button>
-            <div class="test"></div>
         </h2>
     </div>
 </body>
 
 <script>
     const colors = ["green", "red", "blue", "green", "orange"]
-    document.body.style.backgroundColor = colors[randomColor()]
-    function randomColor() {
+    var color = document.querySelector('.color')
+    var button = document.querySelector('.change')
+    button.addEventListener('click', function(){
+        var final_color = colors[randomColor()]
+        document.body.style.backgroundColor = final_color
+        color.textContent = final_color
+        function randomColor() {
         return Math.floor(Math.random() * colors.length)
     }
+    })
     /* console.log(Math.floor(Math.random() * colors.length))
     console.log(colors.length) */
 
