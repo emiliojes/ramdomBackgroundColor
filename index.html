@@ -18,13 +18,30 @@
         button {
             background-color: transparent;
             border-radius: 5px;
-            border-color: black;
+            border-color: white;
             font-size: 30px;
             color: white;
         }
     </style>
 </head>
 <body>
-    
+    <div class="container">
+        <h2>
+            the recent background-color is: <span class="color">Red</span>
+            <button class="change">Change the background-color</button>
+            <div class="test"></div>
+        </h2>
+    </div>
 </body>
+
+<script>
+    const colors = ["green", "red", "blue", "green", "orange"]
+    document.body.style.backgroundColor = colors[randomColor()]
+    function randomColor() {
+        return Math.floor(Math.random() * colors.length)
+    }
+    /* console.log(Math.floor(Math.random() * colors.length))
+    console.log(colors.length) */
+
+</script>
 </html>
